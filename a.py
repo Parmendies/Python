@@ -86,6 +86,7 @@ def eat_if_possible(avci: Animal, av: Animal):
     if abs(avci.x - av.x) <= avci.radar and abs(avci.y - av.y) <= avci.radar:
         game_board[av.x][av.y] = None
         if av.name == "koyun":
+            # liste güncellenmiyor
             animals[0] = [x for x in animals[0] if x.x == av.x and x.y == av.y]
         elif av.name == "inek":
             print(abs(avci.x - av.x) <= avci.radar)
