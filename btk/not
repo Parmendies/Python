@@ -1,0 +1,41 @@
+Veri Ön İşleme (Data Preprocessing)
+Veri Kümesinin Eğitim ve Test Olarak Bölünmesi
+
+1 Prediction
+ - Doğrusal Regresyon
+ - Çoklu Doğrusal Regresyon
+  - P-Value
+  - Backward - Forward Elemination
+ 
+ - Polinomal Regresyon
+ - Destek Vektör ile Tahmin (Support Vector Regression, SVR)
+  - (Kernel Trick)
+
+ - Karar Ağacı ile Tahmin
+ - Rassal Ağaç ile Tahmin (Random Forest)
+ 
+ 2 Tahmin Algoritmalarının Değerlendirilmesi (Evaluation of Predictions)
+ - R-Kare Yöntemi (R-Square)
+ - Düzeltilmiş R-Kare Yöntemi (Adjusted R-Square)
+ - OLS
+
+ 3 Özet 
+  - (SRL, MLR,, PR, SVM, DT, RF) + R2 Hesaplama + Korelasyon
+
+Sınıflandırma
+  - Logistic Regression
+  - K-En Yakın Komşu (K-NN)
+  - Destek Vektör Makineleri (Support Vector Machine) SVM
+  - Naif Bayes
+   - P(A|B) = P(B|A) * P(A) / P(B)
+   - Guassian (continuous values)
+   - Multinomial (nominal değerler, sayısal ilişkisi olmayan kategorik veriler)
+   - Bernoulli (binery)
+  - Karar Ağaçları
+  - Rassal Ağaçlar (Random Forest)
+  
+Sınıflandırma Algoritmalarının Değerlendirilmesi
+  - Confusion Matris
+  - False Positive ve False Negative Kavramları
+  - Netlik/doğruluk (accuracy) paradoksu
+  - ROC eğrisi
