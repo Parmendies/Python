@@ -1,6 +1,4 @@
 import cv2
-import cv2
-import sys
 import os
 import numpy as np
 from math import ceil
@@ -31,7 +29,7 @@ def get_data():
             faces = face_cascade.detectMultiScale(im, 1.1, 5, minSize=(50, 50))
             for (x, y, w, h) in faces:
                 im_arr = np.array(im[x:x+w, y:y+h], 'uint8')
-                if im_arr.size != 0:
+                if im_arr.size != 0:  # bazen boş veriyor!
                     images.append(im_arr)
                     image_label.append(i)
 
@@ -39,13 +37,19 @@ def get_data():
     return images, image_label, names
 
 
-# training
+# eğit
 image_data, labels, names = get_data()
+print(labels)
+print(np.array(labels))
+
 recognizer.train(image_data, np.array(labels))
+
+# yuzleri bul
 img = cv2.imread(test_image)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 faces = face_cascade.detectMultiScale(
-    gray, 1.1, 5, minSize=(100, 100))  # yuzleri bul
+    gray, 1.1, 5, minSize=(100, 100))
+
 for (x, y, w, h) in faces:  # yuzleri isaretle
     cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
     test = gray[x:x+w, y:y+h]
@@ -59,7 +63,6 @@ for (x, y, w, h) in faces:  # yuzleri isaretle
                     cv2.FONT_HERSHEY_DUPLEX, .5, (0, 255, 0))
 
 
-cv2.imshow('img', img)  # ekranda
+cv2.imshow('img', img)  # ekrana bas
 cv2.imwrite("output_detected.jpg", img)  # kaydet
-cv2.waitKey(0)  # tusa basinca cik
 cv2.destroyAllWindows()

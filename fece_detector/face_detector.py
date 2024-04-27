@@ -1,4 +1,3 @@
-# face_recognition ve opencv kütüphanelerini import ederek başlıyoruz
 import face_recognition  # type: ignore
 import cv2
 
